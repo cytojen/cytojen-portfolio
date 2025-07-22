@@ -159,7 +159,7 @@ export default function Hero() {
         
       {/* Resume Button */}
       <motion.a
-        href="https://drive.google.com/file/d/125i7vF8nBbTBrpbD8Ip0-bmcvyKSfBa1/view?usp=sharing"
+        href="https://drive.google.com/file/d/1CJJC87JLKC7hTPgm3ootlyvWATRrp5Zp/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 rounded-full text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
@@ -175,8 +175,6 @@ export default function Hero() {
       
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
       </motion.div>
-
-
 
       {/* UX, indicate scrollability */}
       <motion.button
