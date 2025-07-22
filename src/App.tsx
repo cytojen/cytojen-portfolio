@@ -15,7 +15,9 @@ export default function App() {
       <Hero />
 
       <div className="bg-gradient-to-b from-black/80 via-gray-900/60 to-gray-800/40">
-        <Projects />
+        <section id="projects">
+          <Projects />
+        </section>
       </div>
 
       <div className="bg-gradient-to-b from-gray-800/40 via-gray-900/60 to-black/80">
