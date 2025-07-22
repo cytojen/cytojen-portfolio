@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { FileText, ArrowDown } from "lucide-react"
 
 export default function Hero() {
   // Create a ref for the canvas element
@@ -93,6 +94,14 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, 150])
   const opacity = useTransform(scrollY, [0, 300], [1, 0])
 
+  const scrollToProjects = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const projectsSection = document.getElementById("projects")
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" })
+    }
+    event.currentTarget.blur()
+  }
+
   return (
     // Full viewport container
     <div className="relative h-screen w-full overflow-hidden">
@@ -107,50 +116,88 @@ export default function Hero() {
         className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center"
         style={{ y, opacity }}
       >
-        {/* Main heading with gradient text */}
-        <motion.h1
-          className="mb-6 text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          JEN PATRICK NATABA
-        </motion.h1>
-        
-        {/* Subtitle */}
-        <motion.p
-          className="max-w-[600px] text-lg text-gray-300 sm:text-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Aspiring Data Analyst
-        </motion.p>
-        
-        {/* Technology tags with staggered animation */}
-        <motion.div
-          className="mt-8 flex gap-4 text-sm text-green-400"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {["Python", "Data Science", "Machine Learning", "Tableau"].map((tech, index) => (
-            <motion.span
-              key={tech}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-            >
-              {tech}
-              {/* Add separator dot except for last item */}
-              {index < 3 && <span className="ml-4">•</span>}
-            </motion.span>
-          ))}
-        </motion.div>
-
-        {/* Gradient fade at bottom of screen */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+      {/* Main heading with gradient text */}
+      <motion.h1
+        className="mb-6 text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        JEN PATRICK NATABA
+      </motion.h1>
+      
+      {/* Subtitle */}
+      <motion.p
+        className="max-w-[600px] text-lg text-gray-300 sm:text-xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Aspiring Data Analyst
+      </motion.p>
+      
+      {/* Technology tags with staggered animation */}
+      <motion.div
+        className="mt-8 flex gap-4 text-sm text-green-400"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        {["Python", "Data Science", "Machine Learning", "Tableau"].map((tech, index) => (
+          <motion.span
+            key={tech}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+          >
+            {tech}
+            {/* Add separator dot except for last item */}
+            {index < 3 && <span className="ml-4">•</span>}
+          </motion.span>
+        ))}
       </motion.div>
+        
+      {/* Resume Button */}
+      <motion.a
+        href="https://drive.google.com/file/d/125i7vF8nBbTBrpbD8Ip0-bmcvyKSfBa1/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 rounded-full text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <FileText className="h-5 w-5" />
+        View Resume
+      </motion.a>  
+      
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+      </motion.div>
+
+
+
+      {/* UX, indicate scrollability */}
+      <motion.button
+        onClick={scrollToProjects}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full bg-white/5 
+        text-white hover:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-white/20 z-20"        
+        initial={{ opacity: 0.7 }} 
+        animate={{
+          y: [0, 10, 0],
+          transition: {
+            duration: 1.5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.98 }}
+        aria-label="Scroll down"
+      >
+        <ArrowDown className="h-6 w-6" />
+      </motion.button>
     </div>
   )
 }
