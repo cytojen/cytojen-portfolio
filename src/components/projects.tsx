@@ -7,14 +7,14 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   // Category for filters
-  const categories = ["all", "notebooks", "dashboards", "repositories"]
+  const categories = ["all", "analysis", "dashboards", "repositories"]
 
   // List of project entries with category, tech, and link
   const projects = [
     {
       id: 1,
       title: "Air Quality Under the Lens: Ozone Pollution in California",
-      category: "notebooks",
+      category: "analysis",
       description: "Visualizing and analyzing California's 2024 ozone data.",
       link: "https://www.datacamp.com/datalab/w/719b0ac2-28f8-4cbc-9bea-baba55129639",
       icon: <Code className="h-6 w-6" />,
@@ -23,7 +23,7 @@ export default function Projects() {
     {
       id: 2,
       title: "The Price of Innovation: Global Smartphone Launch Trends and Market Insights",
-      category: "notebooks",
+      category: "analysis",
       description: "Global smartphone pricing trends and brand strategies across regions.",
       link: "https://colab.research.google.com/drive/1ZhQhJEZ2NgUi8_ujZKY9xR5aBFKVkbND?usp=sharing",
       icon: <Code className="h-6 w-6" />,
@@ -55,6 +55,34 @@ export default function Projects() {
       link: "https://github.com/cytojen/document-request-system",
       icon: <SiGithub className="h-6 w-6" />,
       tech: ["Python", "Flask", "Database"],
+    },
+    {
+      id: 6,
+      title: "VerifAI",
+      category: "repositories",
+      description: "AI-powered app that detects synthetic images/audio and malicious links for enhanced digital security",
+      link: "https://github.com/verifaiapp/Omdena_Hackathon_VerifAI",
+      icon: <SiGithub className="h-6 w-6" />,
+      tech: ["AI/ML", "Computer Vision", "Audio Processing", "Security"],
+    },
+    {
+      id: 7,
+      title: "Credit Card Fraud Detection - End-to-End Workflow",
+      category: "analysis",
+      description: "Complete machine learning pipeline with EDA for fraud detection achieving 99.95% accuracy, 80.97% recall, and 88.55% precision",
+      link: "https://www.kaggle.com/code/oxyjen/credit-card-fraud-detection-end-to-end-workflow",
+      icon: <Code className="h-6 w-6" />,
+      tech: ["Python", "Machine Learning", "EDA", "Classification"],
+    },
+    {
+      id: 8,
+      title: "Automatic Dashboard Creator",
+      category: "repositories",
+      description: "Intelligent web application that creates dashboards automatically using natural language processing",
+      link: "https://github.com/AshleyFullero/DATAWAVE2025-thryve",
+      viewLink: "https://thryve-datawave.vercel.app/",
+      icon: <SiGithub className="h-6 w-6" />,
+      tech: ["NLP", "Web App", "Dashboard", "Automation"],
     },
   ]
 
@@ -133,16 +161,29 @@ export default function Projects() {
                       ))}
                     </div>
                       
-                      {/* External project link */}
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View Project
-                      </a>
+                      {/* External project link(s) */}
+                      <div className="flex flex-col gap-2">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          View Project
+                        </a>
+                        {project.viewLink && (
+                          <a
+                            href={project.viewLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                            Live Demo
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
