@@ -16,7 +16,7 @@ export default function Certifications() {
     {
       title: "IBM Data Science Professional Certificate",
       issuer: "IBM via Credly",
-      link: "https://www.credly.com/badges/9f76f47f-726c-4405-9a96-23e6be3197e6/public_url",
+      link: "https://www.coursera.org/account/accomplishments/specialization/7DAN7GTYZOTC",
       image: "./images/ibm-data-science.jpg",
     },
     {
