@@ -159,7 +159,7 @@ export default function Hero() {
         
       {/* Resume Button */}
       <motion.a
-        href="https://drive.google.com/file/d/1CJJC87JLKC7hTPgm3ootlyvWATRrp5Zp/view?usp=sharing"
+        href="https://drive.google.com/file/d/1G_LAu-c6K98xwdREYHJIUKx-zlz0FiOP/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 rounded-full text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
