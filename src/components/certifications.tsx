@@ -17,7 +17,7 @@ export default function Certifications() {
       title: "IBM Data Science Professional Certificate",
       issuer: "IBM via Credly",
       link: "https://www.coursera.org/account/accomplishments/specialization/7DAN7GTYZOTC",
-      image: "./images/ibm-data-science.jpg",
+      image: "./images/ibm-data-science.png",
     },
     {
       title: "Lead ML Engineer @ Omdena Local Chapter",
