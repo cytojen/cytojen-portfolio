@@ -4,15 +4,22 @@ import { ExternalLink, Award } from "lucide-react"
 export default function Certifications() {
   // Featured/main certification displayed in a prominent card
   const mainCertification = {
-    title: "Certified Associate Data Analyst",
+    title: "Certified Data Engineer",
     issuer: "DataCamp",
-    link: "https://www.datacamp.com/certificate/DAA0014313414567",
-    image: "./images/certified-associate-data-analyst.jpg",
-    description: "Professional certification demonstrating proficiency in data analysis and SQL.",
+    link: "https://www.datacamp.com/certificate/DAA001A414567",
+    image: "/placeholder.svg",
+    description:
+      "Professional certification demonstrating the ability to clean, validate, and manipulate complex datasets using Python, understand and interpret database schemas and design principles, leverage cloud-based tools for data storage and pipeline development, and apply best practices in production-level code and software engineering.",
   }
 
   // Array of other certificates to display in a grid
   const certificates = [
+    {
+      title: "Certified Associate Data Analyst",
+      issuer: "DataCamp",
+      link: "https://www.datacamp.com/certificate/DAA0014313414567",
+      image: "./images/certified-associate-data-analyst.jpg",
+    },
     {
       title: "IBM Data Science Professional Certificate",
       issuer: "IBM via Credly",
