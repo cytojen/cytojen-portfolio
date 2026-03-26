@@ -143,7 +143,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        {["Python", "Data Science", "Machine Learning", "Tableau"].map((tech, index) => (
+        {["Python", "Data", "SQL", "Analysis"].map((tech, index) => (
           <motion.span
             key={tech}
             initial={{ opacity: 0, y: 20 }}
