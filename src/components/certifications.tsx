@@ -6,8 +6,8 @@ export default function Certifications() {
   const mainCertification = {
     title: "Certified Data Engineer",
     issuer: "DataCamp",
-    link: "https://www.datacamp.com/certificate/DAA001A414567",
-    image: "/placeholder.svg",
+    link: "https://www.datacamp.com/certificate/DE0019422770746",
+    image: "./images/certified-data-engineer.jpg",
     description:
       "Professional certification demonstrating the ability to clean, validate, and manipulate complex datasets using Python, understand and interpret database schemas and design principles, leverage cloud-based tools for data storage and pipeline development, and apply best practices in production-level code and software engineering.",
   }
