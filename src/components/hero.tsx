@@ -162,14 +162,14 @@ export default function Hero() {
         href="https://drive.google.com/file/d/1dXsEzZeJpeyL2wcixNeCCt61Fs_t1OSr/view"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 rounded-full text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+        className="group mt-10 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-base font-semibold tracking-wide text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-gradient-to-r hover:from-emerald-500/90 hover:to-cyan-500/90 hover:shadow-[0_12px_30px_rgba(16,185,129,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <FileText className="h-5 w-5" />
+        <FileText className="h-5 w-5 transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110" />
         View Resume
       </motion.a>  
       
