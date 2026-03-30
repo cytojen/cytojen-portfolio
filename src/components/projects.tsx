@@ -7,10 +7,19 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   // Category for filters
-  const categories = ["all", "analysis", "dashboards", "repositories"]
+  const categories = ["all", "analysis", "data engineering", "dashboards", "repositories"]
 
   // List of project entries with category, tech, and link
   const projects = [
+    {
+      id: 9,
+      title: "Medallion ETL with Databricks + Power BI",
+      category: "data engineering",
+      description: "Data engineering pipeline implementing a medallion architecture with Databricks and Power BI integration.",
+      link: "https://github.com/cytojen/medallion-etl-databricks-powerbi.git",
+      icon: <SiGithub className="h-6 w-6" />,
+      tech: ["Databricks", "ETL", "Power BI", "Medallion Architecture"],
+    },
     {
       id: 1,
       title: "Air Quality Under the Lens: Ozone Pollution in California",
@@ -84,6 +93,15 @@ export default function Projects() {
       icon: <SiGithub className="h-6 w-6" />,
       tech: ["NLP", "Web App", "Dashboard", "Automation"],
     },
+    {
+      id: 10,
+      title: "Power BI Interactive Dashboard",
+      category: "analysis",
+      description: "Interactive analytics dashboard built in Power BI for business insights and reporting.",
+      link: "https://app.powerbi.com/view?r=eyJrIjoiYjFkMThhYjktNmUxZi00ZmZlLWIzYjgtM2VmODRhYzdmNTFjIiwidCI6IjRkYTk4NTcxLWRjZWEtNDgzOS04ZmIxLTBiZGQ1ZGM5NjlmOSIsImMiOjEwfQ%3D%3D",
+      icon: <BarChart3 className="h-6 w-6" />,
+      tech: ["Power BI", "Dashboard", "Data Analysis"],
+    },
   ]
 
   const filteredProjects = projects.filter((project) =>
@@ -120,18 +138,23 @@ export default function Projects() {
         {/* Projects grid */}
         <div className="min-h-[600px] flex items-start justify-center">
           <motion.div layout className="flex flex-wrap gap-8 justify-center w-full max-w-6xl">
-            <AnimatePresence>
-              {filteredProjects.map((project) => (
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                  initial={{ opacity: 0, scale: 0.94, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, y: 50 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96, y: 12 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: filteredProjects.indexOf(project) * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -10 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 220,
+                    damping: 24,
+                    mass: 0.85,
+                    delay: index * 0.04,
+                  }}
+                  whileHover={{ scale: 1.02, y: -6 }}
                   className="w-80 h-80"
                 >
                   {/* Project card */}
