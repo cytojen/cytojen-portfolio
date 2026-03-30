@@ -116,9 +116,9 @@ export default function Hero() {
         className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center"
         style={{ y, opacity }}
       >
-      {/* Main heading with gradient text */}
+      {/* Main heading with sleek monochrome text */}
       <motion.h1
-        className="mb-6 text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+        className="mb-6 text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl text-zinc-100 drop-shadow-[0_6px_18px_rgba(255,255,255,0.14)]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -162,7 +162,7 @@ export default function Hero() {
         href="https://drive.google.com/file/d/1dXsEzZeJpeyL2wcixNeCCt61Fs_t1OSr/view"
         target="_blank"
         rel="noopener noreferrer"
-        className="group mt-10 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-base font-semibold tracking-wide text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:bg-gradient-to-r hover:from-emerald-500/90 hover:to-cyan-500/90 hover:shadow-[0_12px_30px_rgba(16,185,129,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        className="group mt-10 inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-base font-semibold tracking-wide text-zinc-100 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/80 hover:bg-white hover:text-black hover:shadow-[0_12px_32px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
